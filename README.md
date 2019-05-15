@@ -1,0 +1,2 @@
+# GMConfig
+Config management
