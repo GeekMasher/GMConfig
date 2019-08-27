@@ -1,0 +1,4 @@
+
+test:
+  name: import1
+  import: './tests/data/import2.yml'

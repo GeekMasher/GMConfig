@@ -1,0 +1,6 @@
+
+sample:
+  thisisakey: but this is the value
+  subsample:
+    name: Sub Sample
+  import: "./tests/data/import1.yml"

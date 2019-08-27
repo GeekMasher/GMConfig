@@ -1,0 +1,16 @@
+{
+    "sample": {
+      "thisisakey": "but this is the value",
+      "subsample": {
+        "name": "Sub Sample"
+      },
+      "test": {
+        "name": "import1",
+        "inside_import2": {
+          "test2": {
+            "name": "import2"
+          }
+        }
+      }
+    }
+  }
