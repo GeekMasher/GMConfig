@@ -1,4 +1,3 @@
-
 from os.path import exists
 from json import dumps
 from argparse import ArgumentParser
@@ -6,7 +5,7 @@ from gmconfig.loader import load
 
 parser = ArgumentParser("gmconfig")
 
-parser.add_argument('-c', '--config', help="Config location")
+parser.add_argument("-c", "--config", help="Config location")
 
 
 if __name__ == "__main__":

@@ -1,3 +1,2 @@
-
 class Configuration(dict):
     pass

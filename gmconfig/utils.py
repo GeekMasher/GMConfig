@@ -1,4 +1,3 @@
-
 import logging
 import platform
 
@@ -32,4 +31,3 @@ def createLogger(name, debug: bool = False):
     logger.debug("Log file for {} :: {}".format(name, logpath))
 
     return logger
-

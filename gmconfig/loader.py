@@ -1,4 +1,3 @@
-
 import yaml
 from yaml.constructor import ScalarNode
 from yaml.nodes import MappingNode
@@ -12,20 +11,18 @@ except ImportError:
     from yaml import Loader
 
 
-logger = createLogger('loader')
+logger = createLogger("loader")
 
 
 def load(path: str) -> dict:
     """ Load configuration from path
     """
     yaml.add_constructor(
-        yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
-        resolveImports,
-        yaml.SafeLoader
+        yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, resolveImports, yaml.SafeLoader
     )
     logger.debug(path)
 
-    with open(path, 'r') as handle:
+    with open(path, "r") as handle:
         data = yaml.safe_load(handle)
         logger.debug(data)
     return Configuration(data)
@@ -51,4 +48,3 @@ def resolveImports(loader: yaml.SafeLoader, node: MappingNode, deep: bool = Fals
 
     # return loader.construct_mapping(node, deep)
     return mappings
-
