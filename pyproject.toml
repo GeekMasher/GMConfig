@@ -19,7 +19,7 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Operating System :: Unix",
     "Operating System :: POSIX :: Linux",
-    "Operating System :: Microsoft :: Windows"
+    "Operating System :: Microsoft :: Windows",
     "Topic :: Software Development :: Build Tools",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
