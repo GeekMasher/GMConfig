@@ -44,13 +44,16 @@ def resolveImports(loader: yaml.SafeLoader, node: MappingNode, deep: bool = True
             if isinstance(import_path, str):
                 logger.debug("Import path :: " + import_path)
                 # light merge the two dicts
-                mappings = liteMerge(mappings, load(import_path))
+                mappings.merge(load(import_path))
+                # mappings = liteMerge(mappings, load(import_path))
 
             elif isinstance(import_path, list):
                 logger.debug("Import paths :: " + str(import_path))
                 for imp_path in import_path:
                     # light merge the two dicts
-                    mappings = liteMerge(mappings, load(imp_path))
+                    mappings.merge(load(imp_path))
+                    # mappings = liteMerge(mappings, load(imp_path))
+                    print(mappings)
 
     # return loader.construct_mapping(node, deep)
     return mappings
