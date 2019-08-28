@@ -24,11 +24,16 @@ pipeline {
                 }
                 stage('Linting') {
                     steps {
-                        sh "poetry run black --check"
+                        sh "poetry run black --check gmconfig"
                     }
                 }
             }
 
+        }
+        stage('Build') {
+            steps {
+                sh "poetry build"
+            }
         }
         stage('Release') {
             when {
@@ -38,7 +43,7 @@ pipeline {
                 PYPI_CREDS = credentials('pypi')
             }
             steps {
-                sh "poetry publish --build --username $PYPI_CREDS_USR --password $PYPI_CREDS_PSW"
+                sh "poetry publish --username $PYPI_CREDS_USR --password $PYPI_CREDS_PSW"
             }
         }
     }
