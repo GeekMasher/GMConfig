@@ -53,7 +53,6 @@ def resolveImports(loader: yaml.SafeLoader, node: MappingNode, deep: bool = True
                     # light merge the two dicts
                     mappings.merge(load(imp_path))
                     # mappings = liteMerge(mappings, load(imp_path))
-                    print(mappings)
 
     # return loader.construct_mapping(node, deep)
     return mappings
