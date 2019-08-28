@@ -2,7 +2,27 @@
 name = "GMConfig"
 version = "0.1.3"
 description = "My lazy mans config loading and exporting module"
-authors = ["GeekMasher"]
+
+authors = [
+    "GeekMasher"
+]
+
+license = "MIT"
+
+readme = "README.md"
+
+repository = "https://github.com/GeekMasher/GMConfig"
+
+keywords = ["configuration", "gmconfig"]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: Unix",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows"
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
