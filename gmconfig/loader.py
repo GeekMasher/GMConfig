@@ -3,6 +3,7 @@ from yaml.nodes import MappingNode
 
 from gmconfig.configuration import Configuration
 from gmconfig.utils import createLogger
+from gmconfig.litemerge import liteMerge
 
 try:
     from yaml import CLoader as Loader
@@ -27,7 +28,7 @@ def load(path: str) -> dict:
     return Configuration(data)
 
 
-def resolveImports(loader: yaml.SafeLoader, node: MappingNode, deep: bool = False):
+def resolveImports(loader: yaml.SafeLoader, node: MappingNode, deep: bool = True):
     mappings = Configuration()
 
     for key_node, value_node in node.value:
@@ -39,11 +40,17 @@ def resolveImports(loader: yaml.SafeLoader, node: MappingNode, deep: bool = Fals
 
         if key == "import":
             import_path = mappings.pop(key)
-            mappings.update(load(import_path))
-        elif key == "imports":
-            import_paths = mappings.pop(key)
-            for imp_path in import_paths:
-                mappings.update(load(import_path))
+
+            if isinstance(import_path, str):
+                logger.debug("Import path :: " + import_path)
+                # light merge the two dicts
+                mappings = liteMerge(mappings, load(import_path))
+
+            elif isinstance(import_path, list):
+                logger.debug("Import paths :: " + str(import_path))
+                for imp_path in import_path:
+                    # light merge the two dicts
+                    mappings = liteMerge(mappings, load(imp_path))
 
     # return loader.construct_mapping(node, deep)
     return mappings

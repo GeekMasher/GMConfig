@@ -1,0 +1,9 @@
+
+imports_sample:
+  apps:
+    - "Jack"
+    - "Jill"
+  tests:
+    import:
+      - ./tests/data/import1.yml
+      - ./tests/data/vars.yml

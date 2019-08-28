@@ -1,0 +1,5 @@
+variable_sample: "Yes it is..."
+
+globals:
+  - test
+  - case
