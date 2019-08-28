@@ -1,5 +1,4 @@
 import yaml
-from yaml.constructor import ScalarNode
 from yaml.nodes import MappingNode
 
 from gmconfig.configuration import Configuration
@@ -8,7 +7,7 @@ from gmconfig.utils import createLogger
 try:
     from yaml import CLoader as Loader
 except ImportError:
-    from yaml import Loader
+    from yaml import Loader  # type: ignore
 
 
 logger = createLogger("loader")
