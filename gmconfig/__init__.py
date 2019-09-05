@@ -1,5 +1,6 @@
-__version__ = "0.2.3"
+__version__ = "0.3.0"
 
-from gmconfig.loader import load
-from gmconfig.litemerge import liteMerge
+from gmconfig.loaders.load import loadFile as load
+
+from gmconfig.utils.litemerge import liteMerge
 from gmconfig.configuration import Configuration

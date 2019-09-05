@@ -1,0 +1,10 @@
+example = "root example"
+
+[sample]
+thisisakey = "but this is the value"
+
+import = "./tests/data/import1.yml"
+
+[sample.subsample]
+name = "Sub Sample"
+
