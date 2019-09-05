@@ -1,7 +1,8 @@
 from os.path import exists
 from json import dumps
 from argparse import ArgumentParser
-from gmconfig.loader import load
+
+from gmconfig import load
 
 parser = ArgumentParser("gmconfig")
 

@@ -1,4 +1,6 @@
 
+example: "root example"
+
 sample:
   thisisakey: but this is the value
   subsample:
