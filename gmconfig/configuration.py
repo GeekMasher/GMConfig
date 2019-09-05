@@ -1,4 +1,4 @@
-from gmconfig.litemerge import liteMerge
+from gmconfig.utils import liteMerge
 
 
 class Configuration(dict):
