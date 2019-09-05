@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "GMConfig"
-version = "0.2.3"
+version = "0.3.0"
 description = "My lazy mans config loading and exporting module"
 
 authors = [
