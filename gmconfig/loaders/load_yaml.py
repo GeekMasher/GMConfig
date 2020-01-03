@@ -36,7 +36,7 @@ def resolveImports(loader: yaml.SafeLoader, node: MappingNode, deep: bool = True
         mappings[key] = value
         logger.debug("Key :: " + key)
 
-        if key == "import":
+        if key == "$import":
             import_path = mappings.pop(key)
 
             if isinstance(import_path, str):
