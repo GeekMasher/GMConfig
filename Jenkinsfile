@@ -1,12 +1,12 @@
 pipeline {
     agent {
-        docker { image 'python:3.7-alpine' }
+        docker { image 'python:latest' }
     }
 
     stages {
         stage('Pre-build') {
             steps {
-                sh "pip install poetry"
+                sh "pip install --user poetry"
                 sh "poetry install"
             }
         }
